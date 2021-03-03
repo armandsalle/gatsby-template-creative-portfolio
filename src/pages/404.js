@@ -1,13 +1,11 @@
-import React from "react"
-import { Link } from "gatsby"
+import { navigate } from "gatsby"
+import { useEffect } from "react"
 
 const NotFoundPage = () => {
-  return (
-    <main>
-      <h1>404</h1>
-      <Link to="/">Go home</Link>.
-    </main>
-  )
+  useEffect(() => {
+    if (window !== "undefined") navigate("/")
+  }, [])
+  return null
 }
 
 export default NotFoundPage
